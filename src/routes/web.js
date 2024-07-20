@@ -7,8 +7,6 @@ const router = express.Router()
  * @param {*} app : express app
  */
 
-
-
 const initWebRouters = app => {
   router.get('/', homeController.handleHelloWorld)
   router.get('/user', homeController.handleUserPage)
