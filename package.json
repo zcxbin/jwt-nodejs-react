@@ -13,6 +13,7 @@
     "@babel/core": "7.24.9",
     "@babel/node": "7.24.8",
     "bcrypt": "5.1.1",
+    "bluebird": "3.7.2",
     "body-parser": "1.20.2",
     "dotenv": "^16.4.5",
     "ejs": "3.1.10",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.8",
-    "@types/bcrypt": "^5.0.2"
+    "@types/bcrypt": "^5.0.2",
+    "@types/bluebird": "^3.5.42"
   }
 }
