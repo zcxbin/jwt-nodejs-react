@@ -1,5 +1,5 @@
 import express from 'express'
-import configViewEngine from './configs/viewengine'
+import configViewEngine from './config/viewEngine'
 import initWebRouters from './routes/web'
 require('dotenv').config()
 import bodyParser from 'body-parser'
