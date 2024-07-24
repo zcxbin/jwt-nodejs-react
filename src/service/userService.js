@@ -21,7 +21,7 @@ const createNewUser = async (email, password, username) => {
 
   try {
     const [rows, fields] = await connection.execute(
-      'INSERT INTO users (email, password, username) VALUES (?, ?, ?)',
+      'INSERT INTO user (email, password, username) VALUES (?, ?, ?)',
       [email, hashPass, username]
     )
   } catch (err) {
@@ -36,10 +36,9 @@ const getUserList = async () => {
     database: 'jwt',
     Promise: bluebird
   })
-  let users = []
 
   try {
-    const [rows, fields] = await connection.execute('SELECT * FROM users')
+    const [rows, fields] = await connection.execute('SELECT * FROM user')
     return rows
   } catch (err) {
     console.log('>>> check err: ', err)
@@ -55,7 +54,7 @@ const deleteUser = async id => {
   })
   try {
     const [rows, fields] = await connection.execute(
-      'DELETE FROM users WHERE id=?',
+      'DELETE FROM user WHERE id=?',
       [id]
     )
     return rows
@@ -73,7 +72,7 @@ const getUserById = async id => {
   })
   try {
     const [rows, fields] = await connection.execute(
-      'SELECT * FROM users WHERE id=?',
+      'SELECT * FROM user WHERE id=?',
       [id]
     )
     return rows
@@ -91,7 +90,7 @@ const updateUserInfor = async (email, username, id) => {
   })
   try {
     const [rows, fields] = await connection.execute(
-      'UPDATE users SET email = ?, username = ? WHERE id = ?',
+      'UPDATE user SET email = ?, username = ? WHERE id = ?',
       [email, username, id]
     )
     return rows
